@@ -9,10 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './userProfile/userProfile.component';
 import { ImportProcessComponent } from './importProcess/importProcess.component';
 import { AddUserProfileComponent } from './userProfile/addUserProfile.component';
-import { AddLogComponent } from './dashboard/addLog.component';
-import { PrintReportComponent } from './dashboard/printReport.component';
-import { PrintSearchReportComponent } from './dashboard/printSearchReport.component';
-import { LogDetailComponent } from './dashboard/logDetail.component';
+import { AddLogComponent } from './dashboard/addLog.component'; 
 import { AccessDeniedComponent } from './common/accessDenied.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -30,13 +27,10 @@ const PAGES_COMPONENTS = [
     PagesComponent,
     DashboardComponent,
     UserProfileComponent,
-    AddUserProfileComponent,
-    LogDetailComponent,
+    AddUserProfileComponent, 
     AddLogComponent,
-    ImportProcessComponent,
-    PrintReportComponent,
-    AccessDeniedComponent,
-    PrintSearchReportComponent
+    ImportProcessComponent, 
+    AccessDeniedComponent 
 ];
 @NgModule({
     imports: [
@@ -56,7 +50,7 @@ const PAGES_COMPONENTS = [
         ...PAGES_COMPONENTS
 ,
         FullReportComponent    ],
-    entryComponents: [DashboardComponent, AddUserProfileComponent, AddLogComponent, PrintReportComponent, AccessDeniedComponent, PrintSearchReportComponent],
+    entryComponents: [DashboardComponent, AddUserProfileComponent, AddLogComponent,  AccessDeniedComponent],
     bootstrap: [DashboardComponent],
     providers: [{ provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: {} }, { provide: DatePipe, useValue: {}}]
 

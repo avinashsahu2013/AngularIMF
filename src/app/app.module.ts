@@ -9,8 +9,7 @@ import { AppRoutes } from './app.routing.module';
 import { AppComponent } from './app.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FullComponent } from './layouts/full.component';
-import { AppHeaderComponent } from './layouts/header/header.component';
+import { FullComponent } from './layouts/full.component'; 
 import { AppSidebarComponent } from './layouts/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material-module';
@@ -24,9 +23,7 @@ import { ConfirmComponent } from '../app/pages/common/confirm.component';
 @NgModule({
     declarations: [
         AppComponent,
-        FullComponent,
-
-        AppHeaderComponent,
+        FullComponent, 
         SpinnerComponent,
         AppSidebarComponent,
         ConfirmComponent
