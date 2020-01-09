@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v38/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  margin-top:-1px;
+}
+
+.background-color{
+    background-color:#314551 !important;
+}
+
+.background-colorPagePanel{
+    background-color:#7f7572 !important;
+    /*a4615ed1*/
+}
+
+.button-color{
+   color:#314551 !important;
+}
+
+.btn-bgcolor{
+   background-color:#314551 !important;
+   color:whitesmoke;
+}
+
+.checkbox-bgcolor{
+   background-color:#314551 !important;
+   color:whitesmoke;
+}
+
+.mat-row:hover{
+    background-color:lightgrey;
+}
+
+.mat-icon-button {
+        width: 25px !important;
+        height:25px !important;
+        line-height:25px !important;
+    }
+
+.gray { background-color: #f5f5f5 }
+

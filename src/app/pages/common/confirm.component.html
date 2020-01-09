@@ -1,0 +1,31 @@
+﻿<style>
+    .modal-header {
+        top: 0;
+        z-index: 1 !important;
+        background: inherit;
+        background-color: #314551;
+        height: 35px;
+        text-align: left;
+        color: white;
+        padding-top:4px;
+    }
+
+</style>
+<div class="modal-header">
+    <span>{{modalHeader}}</span>
+</div>
+<div class="modal-body">
+    <mat-dialog-content>
+        {{modalContent}}
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <div class="row" style="width:100%;">
+            <div class="col-md-10">
+                <button class="btn btn-bgcolor pull-right btn-sm" (click)="cancelDialog()" *ngIf="showCancel">{{falseButton}}</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-bgcolor btn-sm" (click)="okDialog()" [mat-dialog-close]="true">{{trueButton}}</button>
+            </div>
+        </div>
+    </mat-dialog-actions>
+</div>

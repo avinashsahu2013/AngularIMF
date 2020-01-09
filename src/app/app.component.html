@@ -1,0 +1,62 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1 sidebar">
+            <ul>
+                <li>
+                    <a [routerLink]="['']"><img src="assets/img/International_Monetary_Fund_logo.png" alt="Home"></a>
+                    <div class="menu_text logo_text">IMF</div>
+                </li>
+                <li>
+                    <img class="menu_icon" src="assets/img/about-us.png" alt="Abuot us">
+                    <div class="menu_text">About us</div>
+                </li>
+                <li>
+                    <img class="menu_icon" src="assets/img/areaer_icon.png" alt="AREAER">
+                    <!-- <div class="menu_text">AREAER</div> --><br>
+                    <a [routerLink]="['fullReport']">AREAER </a>
+                </li>
+                <li>
+                    <img class="menu_icon" src="assets/img/Fari_icon.png" alt="FARI">
+                    <div class="menu_text">FARI</div>
+                </li>
+                <li>
+                    <img class="menu_icon"src="assets/img/eDMS_icon.png" alt="eDMS">
+                    <div class="menu_text">eDMS</div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-11 main_content">
+            <div class="col-md-12">
+                <div class="top-header">
+                    <div class="sec_navigation">
+                        <a [routerLink]="['']">Home </a> 
+                        <a href="">Admin</a>
+                    </div>
+                    <div class="profile">
+                        <div class="user_img"></div>
+                        <span class="profile_name">John Doe</span>
+                        <div class="dropdown dropleft">
+                            <a class="btn dropdown-toggle" href="#" role="button" id="user_profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="user_profile">
+                            <a class="dropdown-item" href="#">Item 1</a>
+                            <a class="dropdown-item" href="#">Item 2</a>
+                            <a class="dropdown-item" href="#">Item 3</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<router-outlet><app-spinner></app-spinner></router-outlet>
+        </div>
+    </div>  
+</div>
+
+
+<block-ui message="Loading...">
+    <!-- Your markup here -->
+</block-ui>

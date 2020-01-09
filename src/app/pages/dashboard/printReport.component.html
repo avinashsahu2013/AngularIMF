@@ -1,0 +1,221 @@
+﻿<style>
+    kendo-pdf-export {
+        font-family: "DejaVu Sans", "Arial", sans-serif;
+        font-size: 13px;
+    }
+
+    .pageNum {
+        font-family: "DejaVu Sans", "Arial", sans-serif;
+        position: absolute;
+        font-size: 13px;
+        bottom: 5px;
+        right: 15px;
+    }
+
+    .modal-header {
+        top: 0;
+        z-index: 1 !important;
+        background: inherit;
+        background-color: #1E88E5;
+        height: 60px;
+        text-align: left;
+        color: white;
+    }
+
+    .rowtop {
+        border-top: 2px;
+        border-bottom: 2px;
+    }
+
+    .rowfont {
+        font-weight: bold;
+    }
+
+    .scroll {
+        overflow: auto !important;
+        min-height: 100px !important;
+    }
+</style>
+<div class="modal-header">
+    <span>Report</span>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-sm-10"></div>
+        <div class="col-sm-2" style="margin-top:10px; text-align:right">
+            <button type="submit" (click)="printReport()" title="Print"><i class="fa fa-print"></i></button>&nbsp;
+            <button type="submit" (click)="savePDF(pdf)" title="Export to PDF"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red"></i></button>
+        </div>
+    </div>
+</div>
+<kendo-pdf-export #pdf paperSize="A3" margin="0.10cm">
+    <ng-template kendoPDFTemplate let-pageNum="pageNum" let-totalPages="totalPages" *ngIf="isVisible" style="text-align:right">
+        <div class="pageNum">
+            {{ pageNum }} / {{ totalPages }}
+        </div>
+    </ng-template>
+    <div id="print" #print>
+        <style>
+            .fontBold {
+                font-weight: bold;
+            }
+
+            .headerFont {
+                font-family: "Arial Black", Gadget, sans-serif;
+                font-weight: bolder;
+                font-size: x-large;
+            }
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <div class="row">
+            <div class="col-sm-12 headerFont">
+                <img src="~../../assets/images/cbs_eye.png" height="70px" width="80px" />Sports Track
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                TITLE/SPORT
+            </div>
+            <div class="col-sm-6">
+                {{reportObj.tapE_TITLE}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                SUBTITLE
+            </div>
+            <div class="col-sm-6">
+                {{reportObj.subtitle}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                SHOOT DATE
+            </div>
+            <div class="col-sm-4">
+                {{reportObj.shooT_DATE | date :'MM/dd/yyyy'}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                AIR DATE
+            </div>
+            <div class="col-sm-4">
+                {{reportObj.aiR_DATE | date :'MM/dd/yyyy'}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                VENUE
+            </div>
+            <div class="col-sm-6">
+                {{reportObj.venue}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                LOCATION
+            </div>
+            <div class="col-sm-6">
+                {{reportObj.location}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                OTHER
+            </div>
+            <div class="col-sm-6">
+                {{reportObj.other}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                LOGGED BY
+            </div>
+            <div class="col-sm-6">
+                {{reportObj.loggeD_BY}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                PRODUCER
+            </div>
+            <div class="col-sm-6">
+                {{reportObj.producer}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                DIRECTOR
+            </div>
+            <div class="col-sm-6">
+                {{reportObj.director}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                REEL NUMBER
+            </div>
+            <div class="col-sm-6">
+                {{reportObj.reeL_NUMBER}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 fontBold">
+                SHOW CODE
+            </div>
+            <div class="col-sm-6">
+                {{reportObj.showCode}}
+            </div>
+        </div>
+        <div class="row" style="height:60px;">
+
+        </div>
+        <div class="row">
+            <div class="col-sm-10 headerFont">
+                <img src="~../../assets/images/cbs_eye.png" height="50px" width="50px" />CBS
+            </div>
+        </div>
+        <div class="form-group col-sm-12">
+            <div class="row">
+                <table class="table col-sm-12 mat-elevation-z8">
+                    <ng-container>
+                        <thead>
+                            <tr class="rowtop">
+                                <th width="9%" class="fontBold">TIME</th>
+                                <th width="12%" class="fontBold">CODE</th>
+                                <th width="79%" class="fontBold">STORY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let log of reportObj.dataLogs">
+                                <tr>
+                                    <td width="9%">{{log.time}}</td>
+                                    <td width="12%">{{log.code}}</td>
+                                    <td width="79%">{{log.story}}</td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </ng-container>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</kendo-pdf-export>

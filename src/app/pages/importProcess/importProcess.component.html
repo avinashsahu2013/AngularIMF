@@ -1,0 +1,15 @@
+﻿<style>
+    table {
+        width: 100%;
+    }
+</style>
+<mat-card>
+    <mat-card-content>
+        <div class="form-group">
+            <label for="file">Choose File</label>
+            <input type="file"
+                   id="file"
+                   (change)="handleFileInput($event.target.files)">
+        </div>
+    </mat-card-content>
+</mat-card>

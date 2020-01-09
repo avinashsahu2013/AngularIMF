@@ -1,0 +1,100 @@
+.mat-form-field, .mat-table, .mat-card-content, .mat-raised-button, .mat-radio-label-content, .mat-radio-label {
+    /*font-family: sans-serif !important;*/
+}
+.mat-table {
+    height: 650px;
+    width: 100%;
+    overflow: auto;
+}
+
+.mat-header-row, .mat-row {
+    padding: 0;
+    cursor: pointer;
+}
+
+.mat-header-row {
+    top: 0;
+    position: sticky !important;
+    z-index: 1 !important;
+    background: inherit;
+    background-color: #3A76BC;
+}
+
+.mat-header-cell, .mat-cell {
+    vertical-align: middle;
+    background: inherit;
+}
+
+.mat-header-cell {
+    color: white;
+    font-size: 13px;
+}
+
+.mat-cell {
+    font-size: 11px;
+}
+
+mat-row {
+    min-height: 20px;
+}
+
+.mat-header-row {
+    min-height: 25px;
+}
+
+
+mat-radio-button {
+    /*font-family: sans-serif !important;*/
+    padding-right: 8px !important;
+}
+
+mat-panel-title {
+    padding-left: 16px;
+    z-index: 1 !important;
+    background: inherit;
+    /*background-color: #314551;*/
+    text-align: left;
+    color: white;
+    vertical-align: middle !important;
+    /*font-family: sans-serif !important;*/
+    font-weight: bold;
+}
+
+.mat-expansion-panel-header {
+    height: 33px !important;
+}
+
+.mat-expansion-panel-header {
+    padding-top: 6px;
+    padding-left: 16px;
+    z-index: 1 !important;
+    background: inherit;
+    /*background-color: #314551;*/
+    text-align: left;
+    color: white;
+    vertical-align: middle !important;
+}
+
+    .mat-expansion-panel-header.mat-expanded,
+    .mat-expansion-panel-header.mat-expanded:hover {
+        background: inherit;
+        /*background-color: #314551 !important;*/
+    }
+
+    .mat-expansion-panel-header:hover {
+        background: inherit;
+        /*background-color: #314551 !important;*/
+    }
+
+.mat-expansion-panel-body {
+    padding: 0 15px !important;
+}
+
+.btn-sm, .btn-group-sm > .btn {
+    height: 25px;
+    padding-top: 1px;
+}
+
+:host(.mat-expansion-panel-body) {
+    padding: 0 15px 16px !important;
+}
