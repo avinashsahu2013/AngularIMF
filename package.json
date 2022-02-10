@@ -40,7 +40,7 @@
     "ng-block-ui": "^1.0.4",
     "ngx-infinite-scroll": "7.0.0",
     "ngx-toastr": "^8.8.0",
-    "node-sass": "^4",
+    "node-sass": "^7",
     "rxjs": "^6.2.0",
     "rxjs-compat": "^6.2.0",
     "rxjs-tslint": "^0.1.4",
